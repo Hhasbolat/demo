@@ -26,8 +26,9 @@ public class BlogController {
     public List<Blog> findAll(){
         return blogService.findAll();
     }
-    @RequestMapping(path = "/2", method = RequestMethod.GET)
-    public Optional<Blog> findById(){
-        return blogService.findById();
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Optional<Blog> findById(@PathVariable("id") Integer id){
+        return blogService.findById(id);
     }
 }

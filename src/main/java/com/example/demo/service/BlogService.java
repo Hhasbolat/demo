@@ -11,5 +11,5 @@ public interface BlogService {
 
         List<Blog> findAll();
 
-        Optional<Blog> findById();
+        Optional<Blog> findById(Integer id);
 }

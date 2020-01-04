@@ -29,7 +29,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Optional<Blog> findById() {
-        return blogRepository.findById(2);
+    public Optional<Blog> findById(Integer id) {
+        return blogRepository.findById(id);
     }
 }
