@@ -6,7 +6,5 @@ import java.util.List;
 
 public interface BlogService {
 
-    List<Blog> findAll();
-
-    Blog putText(Blog text);
+        Blog blog(Blog blog);
 }

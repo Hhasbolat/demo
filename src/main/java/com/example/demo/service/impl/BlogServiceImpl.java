@@ -18,13 +18,7 @@ public class BlogServiceImpl implements BlogService {
 
 
     @Override
-    public List<Blog> findAll() {
-        return blogRepository.findAll();
-    }
-
-    @Override
-    public Blog putText(Blog text) {
-        text.setText("selam");
-        return blogRepository.save(text);
+    public Blog blog(Blog blog) {
+        return blogRepository.save(blog);
     }
 }

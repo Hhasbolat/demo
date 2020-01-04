@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Blog;
-import com.example.demo.repo.BlogRepository;
+import com.example.demo.service.BlogService;
 import com.example.demo.service.impl.BlogServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,19 +12,14 @@ import java.util.Optional;
 @RequestMapping(path = "/blog")
 public class BlogController {
 
-    private final BlogServiceImpl blogService;
+    private final BlogService blogService;
 
     public BlogController(BlogServiceImpl blogService) {
         this.blogService = blogService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Blog putText(Blog blog){
-        return blogService.putText(blog);
+    @RequestMapping(method = RequestMethod.POST)
+    public Blog blog(@RequestBody Blog blog){
+        return blogService.blog(blog);
     }
-
-
-
-
-
 }
