@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Blog;
 import com.example.demo.service.BlogService;
-import com.example.demo.service.impl.BlogServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public class BlogController {
 
     private final BlogService blogService;
 
-    public BlogController(BlogServiceImpl blogService) {
+    public BlogController(BlogService blogService) {
         this.blogService = blogService;
     }
 
