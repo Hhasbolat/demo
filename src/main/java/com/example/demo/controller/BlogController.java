@@ -28,6 +28,7 @@ public class BlogController {
     }
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     @ResponseBody
+    //@PathVariable("id") == @PathVariable olabilir aynı şey path ismi id olduğu için :D
     public Optional<Blog> findById(@PathVariable("id") Integer id){
         return blogService.findById(id);
     }
