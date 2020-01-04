@@ -6,6 +6,7 @@ import com.example.demo.service.BlogService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -20,5 +21,15 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog blog(Blog blog) {
         return blogRepository.save(blog);
+    }
+
+    @Override
+    public List<Blog> findAll() {
+        return  blogRepository.findAll();
+    }
+
+    @Override
+    public Optional<Blog> findById() {
+        return blogRepository.findById(2);
     }
 }
