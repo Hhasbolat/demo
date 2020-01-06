@@ -4,10 +4,13 @@ import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
 
-        User addUser(User user);
+        UserDto addUser(UserDto user);
 
-        List<User> getUser();
+        List<UserDto> getUser();
+
+        Optional<User> findById(Integer id);
 }
