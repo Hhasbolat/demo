@@ -1,14 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.exception.BlogNotFoundException;
 import com.example.demo.model.Blog;
 import com.example.demo.service.BlogService;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -32,15 +29,7 @@ public class BlogController {
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     //@PathVariable("id") == @PathVariable olabilir aynı şey path ismi id olduğu için :D
-    public Optional<Blog> findById(@PathVariable("id") Integer id){
-
-        try {
-            return blogService.findById(id);
-        }
-        catch (BlogNotFoundException e){
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "Blog Not Found", e);
-        }
-
+    public ResponseEntity<Blog> findById(@PathVariable("id") Integer id){
+            return ResponseEntity.of(blogService.findById(id));
     }
 }
