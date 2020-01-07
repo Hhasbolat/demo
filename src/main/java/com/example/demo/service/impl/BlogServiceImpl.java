@@ -1,8 +1,10 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.model.Blog;
+import com.example.demo.model.dto.BlogDto;
 import com.example.demo.repo.BlogRepository;
 import com.example.demo.service.BlogService;
+import com.example.demo.service.converter.BlogConverter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,13 +22,20 @@ public class BlogServiceImpl implements BlogService {
 
 
     @Override
-    public Blog blog(Blog blog) {
-        return blogRepository.save(blog);
+    public BlogDto blog(BlogDto blogDto) {
+        Blog blog1 = BlogConverter.convert(blogDto);
+        Blog save = blogRepository.save(blog1);
+        BlogDto blogDto1 = BlogConverter.convert(save);
+        return blogDto1;
     }
 
     @Override
-    public List<Blog> findAll() {
-        return  blogRepository.findAll();
+    public List<BlogDto> findAll() {
+        List<Blog> all = blogRepository.findAll();
+
+        List<BlogDto> blogDtoList = BlogConverter.convert(all);
+
+        return blogDtoList;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Blog;
+import com.example.demo.model.dto.BlogDto;
 import com.example.demo.service.BlogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,11 @@ public class BlogController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Blog blog(@RequestBody Blog blog){
+    public BlogDto blog(@RequestBody BlogDto blog){
         return blogService.blog(blog);
     }
     @RequestMapping(method = RequestMethod.GET)
-    public List<Blog> findAll(){
+    public List<BlogDto> findAll(){
         return blogService.findAll();
     }
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)

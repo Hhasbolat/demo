@@ -25,7 +25,6 @@ public class UserServiceImpl implements UserService {
     public UserDto addUser(UserDto userDto1) {
         User user = UserConverter.convert(userDto1);
         User save = userRepository.save(user);
-
         UserDto userDto = UserConverter.convert(save);
 
         return userDto;
