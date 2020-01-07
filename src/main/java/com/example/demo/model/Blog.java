@@ -13,6 +13,10 @@ public class Blog {
     @Column(name = "TEXT")
     private String text;
 
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "id")
+    private User user;
+
     public int getId() {
         return id;
     }
@@ -27,5 +31,13 @@ public class Blog {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

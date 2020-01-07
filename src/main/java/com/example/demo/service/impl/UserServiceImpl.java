@@ -23,7 +23,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto addUser(UserDto userDto1) {
-
         User user = UserConverter.convert(userDto1);
         User save = userRepository.save(user);
 
@@ -34,7 +33,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> getUser() {
-
         List<User> all = userRepository.findAll();
 
         List<UserDto> dtoList = UserConverter.convert(all);
@@ -43,10 +41,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public Optional<User> findById(Integer id){
-
         Optional<User> all = userRepository.findById(id);
-
-
 
         return all;
     }

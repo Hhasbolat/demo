@@ -31,8 +31,8 @@ public class UserController {
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    //@PathVariable("id") == @PathVariable olabilir aynı şey path ismi id olduğu için :D
     public ResponseEntity<User> findById(@PathVariable("id") Integer id){
         return ResponseEntity.of(userService.findById(id));
     }
+
 }

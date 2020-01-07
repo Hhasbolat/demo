@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -24,6 +25,9 @@ public class User {
 
     @Column(name = "PASSWORD")
     private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Blog> blog;
 
     public Integer getId() {
         return id;
@@ -71,5 +75,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Blog> getBlog() {
+        return blog;
+    }
+
+    public void setBlog(List<Blog> blog) {
+        this.blog = blog;
     }
 }
