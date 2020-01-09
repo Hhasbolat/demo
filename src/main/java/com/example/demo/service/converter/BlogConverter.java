@@ -1,9 +1,7 @@
 package com.example.demo.service.converter;
 
 import com.example.demo.model.Blog;
-import com.example.demo.model.User;
 import com.example.demo.model.dto.BlogDto;
-import com.example.demo.model.dto.UserDto;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,7 +13,7 @@ public class Blog {
     @Column(name = "TEXT")
     private String text;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id")
     private User user;
 

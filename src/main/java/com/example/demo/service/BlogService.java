@@ -12,5 +12,7 @@ public interface BlogService {
 
         List<BlogDto> findAll();
 
+        List<BlogDto> findAll(String nickname);
+
         Optional<Blog> findById(Integer id);
 }

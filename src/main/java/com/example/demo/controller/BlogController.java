@@ -23,10 +23,17 @@ public class BlogController {
     public BlogDto blog(@RequestBody BlogDto blog){
         return blogService.blog(blog);
     }
+
     @RequestMapping(method = RequestMethod.GET)
     public List<BlogDto> findAll(){
         return blogService.findAll();
     }
+
+    @RequestMapping(method = RequestMethod.GET, params = "nickname")
+    public List<BlogDto> findAll(@RequestParam("nickname") String nickname){
+        return blogService.findAll(nickname);
+    }
+
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     //@PathVariable("id") == @PathVariable olabilir aynı şey path ismi id olduğu için :D

@@ -1,5 +1,7 @@
 package com.example.demo.model.dto;
 
+
+
 public class BlogDto {
     private String text;
 

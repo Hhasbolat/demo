@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Blog;
 import com.example.demo.model.User;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.UserService;

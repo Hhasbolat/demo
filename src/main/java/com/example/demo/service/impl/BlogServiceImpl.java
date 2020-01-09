@@ -37,6 +37,14 @@ public class BlogServiceImpl implements BlogService {
 
         return blogDtoList;
     }
+    @Override
+    public List<BlogDto> findAll(String nickname) {
+        List<Blog> all = blogRepository.findAllByUser_Nickname(nickname);
+
+        List<BlogDto> blogDtoList = BlogConverter.convert(all);
+
+        return blogDtoList;
+    }
 
     @Override
     public Optional<Blog> findById(Integer id) {

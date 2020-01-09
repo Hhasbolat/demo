@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService {
 
     public Optional<User> findById(Integer id){
         Optional<User> all = userRepository.findById(id);
-
         return all;
     }
 
